@@ -1,0 +1,25 @@
+
+
+class EvenNumbers:
+
+
+    def __init__(self, end):
+        self.end = end
+        self.start = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.start == self.end:
+            raise  StopIteration
+
+        else:
+            self.start += 2
+            return self.start - 2
+
+my_en = EvenNumbers(40)
+print(next(my_en))
+
+for i in my_en:
+    print(i)
